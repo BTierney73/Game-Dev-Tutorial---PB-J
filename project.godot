@@ -21,7 +21,10 @@ project/assembly_name="Platformer Project"
 [file_customization]
 
 folder_colors={
+"res://Assets/": "gray",
+"res://Scripts/": "orange",
 "res://assets/": "green",
+"res://scene/": "red",
 "res://scenes/": "yellow",
 "res://scripts/": "purple"
 }
