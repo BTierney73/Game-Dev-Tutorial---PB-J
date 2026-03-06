@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5tjbriu824me"]
+[gd_scene load_steps=10 format=3 uid="uid://b5tjbriu824me"]
 
 [ext_resource type="PackedScene" uid="uid://c7m3dde7un3vj" path="res://scene/character_body_2d.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://bxfmq6twk8ida" path="res://Assets/sprites/world_tileset.png" id="1_dbls1"]
-[ext_resource type="PackedScene" uid="uid://ifsvcvuf1dlu" path="res://scene/coin.tscn" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://b4q3iqglmd2uv" path="res://scene/animatable_body_2d.tscn" id="3_33cqm"]
+[ext_resource type="PackedScene" uid="uid://ifsvcvuf1dlu" path="res://scene/coin.tscn" id="4_xwcet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 texture = ExtResource("1_dbls1")
@@ -178,6 +178,21 @@ texture = ExtResource("1_dbls1")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_33cqm")
 
+[sub_resource type="Animation" id="Animation_xwcet"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(86.055, 10)]
+}
+
 [sub_resource type="Animation" id="Animation_33cqm"]
 resource_name = "Sliding platform"
 length = 2.0
@@ -193,21 +208,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(86.055, 10), Vector2(228, 10)]
-}
-
-[sub_resource type="Animation" id="Animation_xwcet"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(86.055, 10)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p1ry8"]
@@ -234,29 +234,30 @@ position_smoothing_enabled = true
 
 [node name="Coins" type="Node" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource("3_33cqm")]
+[node name="Coin" parent="Coins" instance=ExtResource("4_xwcet")]
 position = Vector2(30, 10)
 
-[node name="Coin2" parent="Coins" instance=ExtResource("3_33cqm")]
+[node name="Coin2" parent="Coins" instance=ExtResource("4_xwcet")]
 position = Vector2(127, -158)
 
-[node name="Coin3" parent="Coins" instance=ExtResource("3_33cqm")]
+[node name="Coin3" parent="Coins" instance=ExtResource("4_xwcet")]
 position = Vector2(186, -34)
 
-[node name="Coin4" parent="Coins" instance=ExtResource("3_33cqm")]
+[node name="Coin4" parent="Coins" instance=ExtResource("4_xwcet")]
 position = Vector2(539, -21)
 
-[node name="Coin5" parent="Coins" instance=ExtResource("3_33cqm")]
+[node name="Coin5" parent="Coins" instance=ExtResource("4_xwcet")]
 position = Vector2(447, -80)
 
-[node name="Coin6" parent="Coins" instance=ExtResource("3_33cqm")]
+[node name="Coin6" parent="Coins" instance=ExtResource("4_xwcet")]
 position = Vector2(255, -165)
 
-[node name="Coin7" parent="Coins" instance=ExtResource("3_33cqm")]
+[node name="Coin7" parent="Coins" instance=ExtResource("4_xwcet")]
 position = Vector2(468, -146)
 
-[node name="Coin8" parent="Coins" instance=ExtResource("3_33cqm")]
+[node name="Coin8" parent="Coins" instance=ExtResource("4_xwcet")]
 position = Vector2(616, -196)
+
 [node name="Platform" parent="." instance=ExtResource("3_33cqm")]
 position = Vector2(86.055, 10)
 
@@ -265,3 +266,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_p1ry8")
 }
 autoplay = "Sliding platform"
+
+[node name="Coin" parent="." instance=ExtResource("4_xwcet")]
+position = Vector2(-49, 21)
