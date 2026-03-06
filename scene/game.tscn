@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5tjbriu824me"]
+[gd_scene load_steps=11 format=3 uid="uid://b5tjbriu824me"]
 
 [ext_resource type="PackedScene" uid="uid://c7m3dde7un3vj" path="res://scene/character_body_2d.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://bxfmq6twk8ida" path="res://Assets/sprites/world_tileset.png" id="1_dbls1"]
 [ext_resource type="PackedScene" uid="uid://b4q3iqglmd2uv" path="res://scene/animatable_body_2d.tscn" id="3_33cqm"]
+[ext_resource type="PackedScene" uid="uid://ducmput8umeq5" path="res://scene/kill_zone.tscn" id="4_xwcet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 texture = ExtResource("1_dbls1")
@@ -215,6 +216,8 @@ _data = {
 &"Sliding platform": SubResource("Animation_33cqm")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p1ry8"]
+
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -229,6 +232,8 @@ position = Vector2(10, 21)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -6)
 zoom = Vector2(4, 4)
+limit_bottom = 62
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Platform" parent="." instance=ExtResource("3_33cqm")]
@@ -239,3 +244,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_p1ry8")
 }
 autoplay = "Sliding platform"
+
+[node name="KillZone" parent="." instance=ExtResource("4_xwcet")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(52, 81)
+shape = SubResource("WorldBoundaryShape2D_p1ry8")
