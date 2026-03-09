@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5tjbriu824me"]
+[gd_scene load_steps=12 format=3 uid="uid://b5tjbriu824me"]
 
 [ext_resource type="PackedScene" uid="uid://c7m3dde7un3vj" path="res://scene/character_body_2d.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://bxfmq6twk8ida" path="res://Assets/sprites/world_tileset.png" id="1_dbls1"]
 [ext_resource type="PackedScene" uid="uid://b4q3iqglmd2uv" path="res://scene/animatable_body_2d.tscn" id="3_33cqm"]
-[ext_resource type="PackedScene" uid="uid://ifsvcvuf1dlu" path="res://scene/coin.tscn" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://ifsvcvuf1dlu" path="res://scene/coin.tscn" id="4_p1ry8"]
 [ext_resource type="PackedScene" uid="uid://ducmput8umeq5" path="res://scene/kill_zone.tscn" id="4_xwcet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
@@ -239,29 +239,8 @@ position_smoothing_enabled = true
 
 [node name="Coins" type="Node" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource("4_xwcet")]
-position = Vector2(30, 10)
-
-[node name="Coin2" parent="Coins" instance=ExtResource("4_xwcet")]
-position = Vector2(127, -158)
-
-[node name="Coin3" parent="Coins" instance=ExtResource("4_xwcet")]
-position = Vector2(186, -34)
-
-[node name="Coin4" parent="Coins" instance=ExtResource("4_xwcet")]
-position = Vector2(539, -21)
-
-[node name="Coin5" parent="Coins" instance=ExtResource("4_xwcet")]
-position = Vector2(447, -80)
-
-[node name="Coin6" parent="Coins" instance=ExtResource("4_xwcet")]
-position = Vector2(255, -165)
-
-[node name="Coin7" parent="Coins" instance=ExtResource("4_xwcet")]
-position = Vector2(468, -146)
-
-[node name="Coin8" parent="Coins" instance=ExtResource("4_xwcet")]
-position = Vector2(616, -196)
+[node name="Coin10" parent="Coins" instance=ExtResource("4_p1ry8")]
+position = Vector2(-46, 19)
 
 [node name="Platform" parent="." instance=ExtResource("3_33cqm")]
 position = Vector2(86.055, 10)
@@ -272,10 +251,29 @@ libraries = {
 }
 autoplay = "Sliding platform"
 
-[node name="Coin" parent="." instance=ExtResource("4_xwcet")]
-position = Vector2(-49, 21)
 [node name="KillZone" parent="." instance=ExtResource("4_xwcet")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(52, 81)
 shape = SubResource("WorldBoundaryShape2D_p1ry8")
+
+[node name="Coin" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(146, -29)
+
+[node name="Coin2" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(126, -145)
+
+[node name="Coin3" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(434, -63)
+
+[node name="Coin4" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(538, -46)
+
+[node name="Coin5" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(251, -165)
+
+[node name="Coin6" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(481, -137)
+
+[node name="Coin7" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(669, -214)
