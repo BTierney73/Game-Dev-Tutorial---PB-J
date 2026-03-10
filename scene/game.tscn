@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5tjbriu824me"]
+[gd_scene load_steps=17 format=3 uid="uid://b5tjbriu824me"]
 
 [ext_resource type="PackedScene" uid="uid://c7m3dde7un3vj" path="res://scene/character_body_2d.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://bxfmq6twk8ida" path="res://Assets/sprites/world_tileset.png" id="1_dbls1"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://b4q3iqglmd2uv" path="res://scene/animatable_body_2d.tscn" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://ifsvcvuf1dlu" path="res://scene/coin.tscn" id="4_p1ry8"]
 [ext_resource type="PackedScene" uid="uid://ducmput8umeq5" path="res://scene/kill_zone.tscn" id="4_xwcet"]
-[ext_resource type="PackedScene" uid="uid://1f6kpydjpi6p" path="res://scene/slime.tscn" id="6_xlg7c"]
 [ext_resource type="FontFile" uid="uid://6whc562ti60b" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="6_qpk70"]
+[ext_resource type="PackedScene" path="res://scene/slime.tscn" id="6_xlg7c"]
 [ext_resource type="FontFile" uid="uid://yhms3dmv5e45" path="res://Assets/fonts/PixelOperator8.ttf" id="7_ll5lq"]
+[ext_resource type="PackedScene" uid="uid://c4pvay63xdvit" path="res://scene/music.tscn" id="10_yq8tf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 texture = ExtResource("1_dbls1")
@@ -300,8 +301,23 @@ position = Vector2(1073, -31)
 [node name="Coin14" parent="Coins" instance=ExtResource("4_p1ry8")]
 position = Vector2(1094, -66)
 
+[node name="Coin15" parent="Coins" instance=ExtResource("4_p1ry8")]
+position = Vector2(538, -46)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("4_p1ry8")]
+position = Vector2(251, -165)
+
+[node name="Coin17" parent="Coins" instance=ExtResource("4_p1ry8")]
+position = Vector2(481, -137)
+
 [node name="Coin10" parent="Coins" instance=ExtResource("4_p1ry8")]
 position = Vector2(-46, 19)
+
+[node name="Coin19" parent="Coins" instance=ExtResource("4_p1ry8")]
+position = Vector2(669, -214)
+
+[node name="Coin18" parent="Coins" instance=ExtResource("4_p1ry8")]
+position = Vector2(1454, -87)
 
 [node name="Platform" parent="." instance=ExtResource("3_33cqm")]
 position = Vector2(86.055, 10)
@@ -342,18 +358,9 @@ theme_override_fonts/font = ExtResource("7_ll5lq")
 theme_override_font_sizes/font_size = 8
 text = "Falling hurts"
 
-[node name="Coin4" parent="." instance=ExtResource("4_p1ry8")]
-position = Vector2(538, -46)
-
-[node name="Coin5" parent="." instance=ExtResource("4_p1ry8")]
-position = Vector2(251, -165)
-
-[node name="Coin6" parent="." instance=ExtResource("4_p1ry8")]
-position = Vector2(481, -137)
-
-[node name="Coin7" parent="." instance=ExtResource("4_p1ry8")]
-position = Vector2(669, -214)
-
 [node name="Slime" parent="." instance=ExtResource("6_xlg7c")]
 position = Vector2(344, -121)
+
 [node name="Game Manager" type="Node" parent="."]
+
+[node name="Music" parent="." instance=ExtResource("10_yq8tf")]
