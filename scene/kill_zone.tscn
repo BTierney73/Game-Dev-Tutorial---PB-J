@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dxj6507puyx0c" path="res://Scripts/kill_zone.gd" id="1_a4dj5"]
 
 [node name="KillZone" type="Area2D"]
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_a4dj5")
 
 [node name="Timer" type="Timer" parent="."]

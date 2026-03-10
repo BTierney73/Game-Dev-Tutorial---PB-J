@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4q3iqglmd2uv" path="res://scene/animatable_body_2d.tscn" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://ifsvcvuf1dlu" path="res://scene/coin.tscn" id="4_p1ry8"]
 [ext_resource type="PackedScene" uid="uid://ducmput8umeq5" path="res://scene/kill_zone.tscn" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://1f6kpydjpi6p" path="res://scene/slime.tscn" id="6_xlg7c"]
 [ext_resource type="FontFile" uid="uid://6whc562ti60b" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="6_qpk70"]
 [ext_resource type="FontFile" uid="uid://yhms3dmv5e45" path="res://Assets/fonts/PixelOperator8.ttf" id="7_ll5lq"]
 
@@ -339,4 +340,20 @@ offset_bottom = 42.0
 theme_override_colors/font_color = Color(0.027451, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_ll5lq")
 theme_override_font_sizes/font_size = 8
-text = "Falling hurts :("
+text = "Falling hurts"
+
+[node name="Coin4" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(538, -46)
+
+[node name="Coin5" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(251, -165)
+
+[node name="Coin6" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(481, -137)
+
+[node name="Coin7" parent="." instance=ExtResource("4_p1ry8")]
+position = Vector2(669, -214)
+
+[node name="Slime" parent="." instance=ExtResource("6_xlg7c")]
+position = Vector2(344, -121)
+[node name="Game Manager" type="Node" parent="."]
