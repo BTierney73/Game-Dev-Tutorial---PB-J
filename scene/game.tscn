@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5tjbriu824me"]
+[gd_scene load_steps=15 format=3 uid="uid://b5tjbriu824me"]
 
 [ext_resource type="PackedScene" uid="uid://c7m3dde7un3vj" path="res://scene/character_body_2d.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://bxfmq6twk8ida" path="res://Assets/sprites/world_tileset.png" id="1_dbls1"]
+[ext_resource type="Script" uid="uid://dbjpqpudlbbc1" path="res://Scripts/game_manager.gd" id="1_ll5lq"]
 [ext_resource type="PackedScene" uid="uid://b4q3iqglmd2uv" path="res://scene/animatable_body_2d.tscn" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://ifsvcvuf1dlu" path="res://scene/coin.tscn" id="4_p1ry8"]
 [ext_resource type="PackedScene" uid="uid://ducmput8umeq5" path="res://scene/kill_zone.tscn" id="4_xwcet"]
@@ -223,6 +224,21 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_ll5lq")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 1355.0
+offset_top = -157.0
+offset_right = 1565.0
+offset_bottom = -103.0
+theme_override_fonts/font = ExtResource("6_qpk70")
+theme_override_font_sizes/font_size = 16
+text = "You collected X coins"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(84, 35)
 tile_set = SubResource("TileSet_xwcet")
@@ -324,5 +340,3 @@ theme_override_colors/font_color = Color(0.027451, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_ll5lq")
 theme_override_font_sizes/font_size = 8
 text = "Falling hurts :("
-
-[node name="Game Manager" type="Node" parent="."]
